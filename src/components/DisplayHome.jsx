@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { albumsData, songsData } from '../assets/assets'
-import DisplayItems from './DisplayItems'
+import SongItems from './SongItems'
+import AlbumItems from './AlbumItems'
 
 const DisplayHome = () => {
   return (
@@ -13,7 +14,7 @@ const DisplayHome = () => {
         <div className='flex overflow-auto'>
           {/* for each item it will render 1 album, get data from albumsData */}
           {albumsData.map((item, index) =>
-            <DisplayItems key={index} name={item.name} desc={item.desc} id={item.id} image={item.image} />
+            <AlbumItems key={index} name={item.name} desc={item.desc} id={item.id} image={item.image} />
           )}
         </div>
       </div>
@@ -23,7 +24,7 @@ const DisplayHome = () => {
         <div className='flex overflow-auto'>
           {/* for each item it will render 1 album, get data from songsData */}
           {songsData.map((item, index) =>
-            <DisplayItems key={index} name={item.name} desc={item.desc} id={item.id} image={item.image} />
+            <SongItems key={index} name={item.name} desc={item.desc} id={item.id} image={item.image} />
           )}
         </div>
       </div>
