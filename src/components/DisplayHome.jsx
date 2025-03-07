@@ -6,10 +6,17 @@ import AlbumItems from './AlbumItems'
 const DisplayHome = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       {/* for album */}
-      <div className='my-5 font-bold text-2xl'>
-        
+      <div className='mb-4 '>
+        <h1 className='my-5 font-bold text-2xl'>Feature Charts</h1>
+        <div className='flex overflow-auto'>
+          {/* for each item it will render 1 album, get data from albumsData */}
+          {albumsData.map((item, index) =>
+            <AlbumItems key={index} name={item.name} desc={item.desc} id={item.id} image={item.image} />
+          )}
+        </div>
+
       </div>
     </>
   )
