@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigation } from 'react-router-dom'
 
 const SongItems = ({image,id,name,desc}) => {
     return (
