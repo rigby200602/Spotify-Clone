@@ -1,7 +1,6 @@
 import React from 'react'
 
-
-const AlbumItems = ({image,id,name,desc}) => {
+const DisplayItems = ({image,name,id,desc}) => {
   return (
     <div className='min-w-[180px] p-2 px-3 rounded-sm cursor-pointer hover:bg-[#ffffff26]'>
       <img className='rounded-sm' src={image} alt="" />
@@ -11,4 +10,4 @@ const AlbumItems = ({image,id,name,desc}) => {
   )
 }
 
-export default AlbumItems
+export default DisplayItems
