@@ -1,7 +1,8 @@
 import React from 'react'
+import { useNavigation } from 'react-router-dom'
 
 const SongItems = ({image,id,name,desc}) => {
-  return (
+    return (
     <div className='min-w-[180px] p-2 px-3 rounded-sm cursor-pointer hover:bg-[#ffffff26]'>
       <img className='rounded-sm' src={image} alt="" />
       <p className='font-bold mt-2 mb-1'>{name}</p>
