@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes,Route, useLocation } from 'react-router-dom'
 import DisplayHome from './DisplayHome'
 import DisplayAlbum from './DisplayAlbum'
 import { useRef } from 'react'
+import { albumsData } from '../assets/assets'
 
 const Display = () => {
   
   const displayRef = useRef();
   // get location
   const location = useLocation();
-  // check if album size or not
+  // check if album or not
   const isAlbum = location.pathname.includes('album');
+  // set id
+  const albumId = isAlbum ? location.pathname.slice(-1) : '';
+  // set bgcolor
+  const bgColor = albumsData[Number(albumId)].bgColor;
+  // effect change  bgColor
+  useEffect(()=>{
+      { isAlbum ? displayRef.current.style.background = `linear-gradient(${bgColor},#121212)`: displayRef.current.style.background = '#121212'}
+  })
   
 
   return (
