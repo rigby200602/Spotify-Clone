@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const PlayerContext = createContext();
+export const PlayerContext = createContext();
 
 const PlayerContextProvider = (props) => {
 
@@ -14,3 +14,5 @@ const PlayerContextProvider = (props) => {
         </PlayerContext.Provider>
     )
 }
+
+export default PlayerContextProvider;
