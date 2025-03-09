@@ -4,7 +4,7 @@ import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
     // Ref from playerContext
-    const {seekBar,seekBg} = useContext
+    const {seekBar,seekBg} = useContext(PlayerContext);
     
     
     return (
