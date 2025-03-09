@@ -4,7 +4,7 @@ import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
     // Ref from playerContext
-    const {seekBar,seekBg,playStatue,play,pause} = useContext(PlayerContext);
+    const {seekBar,seekBg,playStatus,play,pause} = useContext(PlayerContext);
     
     
     return (
@@ -22,8 +22,9 @@ const Player = () => {
                 <div className='flex gap-4'>
                     <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="Shuffle" />
                     <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="Prev" />
-                    <img onClick={play} className='w-4 cursor-pointer' src={assets.play_icon} alt="Play" />
-                    <img onClick={pause} className='w-4 cursor-pointer' src={assets.pause_icon} alt="Pause" />
+                    {/* render btn base on playStatus, false = play, true = pause */}
+                    {playStatus ? <img onClick={pause} className='w-4 cursor-pointer' src={assets.pause_icon} alt="Pause"  />
+                    : <img onClick={play} className='w-4 cursor-pointer' src={assets.play_icon} alt="Play" />}
                     <img className='w-4 cursor-pointer' src={assets.next_icon} alt="Next" />
                     <img className='w-4 cursor-pointer' src={assets.loop_icon} alt="Loop" />
                 </div>
