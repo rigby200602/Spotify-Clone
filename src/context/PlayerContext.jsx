@@ -13,7 +13,7 @@ const PlayerContextProvider = (props) => {
     // play or not
     const [playStatus,setPlayStatue] = useState(false);
     //Time of song
-    const [time, setTime] = use({
+    const [time, setTime] = useState({
         currentTime: {
             second:0,
             minute:0
@@ -38,12 +38,10 @@ const PlayerContextProvider = (props) => {
         audioRef,
         seekBg,
         seekBar,
-        track,
-        setTrack,
-        playStatus,
-        setPlayStatue,
-        time,
-        setTime,
+        track,setTrack,
+        playStatus,setPlayStatue,
+        time,setTime,
+        play,pause,
     }
 
     return (
