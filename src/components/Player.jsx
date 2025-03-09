@@ -1,20 +1,20 @@
 import React, { useContext } from 'react'
-import { assets, songsData } from '../assets/assets'
+import { assets } from '../assets/assets'
 import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
     // Ref from playerContext
-    const {seekBar,seekBg,playStatus,play,pause} = useContext(PlayerContext);
+    const {track,seekBar,seekBg,playStatus,play,pause} = useContext(PlayerContext);
     
     
     return (
         <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
             {/* Songs Info  */}
             <div className='hidden lg:flex items-center gap-4'>
-                <img className='w-12' src={songsData[0].image} alt="Song image" />
+                <img className='w-12' src={track.image} alt="Song image" />
                 <div>
-                    <p>{songsData[0].name}</p>
-                    <p>{songsData[0].desc.slice(0, 12)}</p>
+                    <p>{track.name}</p>
+                    <p>{track.desc.slice(0, 12)}</p>
                 </div>
             </div>
             {/* Control icon  */}
