@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { assets, songsData } from '../assets/assets'
+import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
+    // Ref from playerContext
+    const {seekBar,seekBg} = useContext
+    
+    
     return (
         <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
             {/* Songs Info  */}
@@ -24,8 +29,8 @@ const Player = () => {
                 {/* Timer */}
                 <div className='flex items-center gap-5'>
                     <p>1:06</p>
-                    <div className='w-[60vw] max-w-[500px] bg-gray-400 rounded-full cursor-pointer'>
-                        <hr className='h-1 border-none w-0 bg-green-500 rounded-full' />
+                    <div ref={seekBg} className='w-[60vw] max-w-[500px] bg-gray-400 rounded-full cursor-pointer'>
+                        <hr ref={seekBar} className='h-1 border-none w-0 bg-green-500 rounded-full' />
                     </div>
                     <p>3:20</p>
                 </div>
