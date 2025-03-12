@@ -4,7 +4,7 @@ import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
     // Ref from playerContext
-    const {track,seekBar,seekBg,playStatus,play,pause, time} = useContext(PlayerContext);
+    const {track,seekBar,seekBg,playStatus,play,pause, time,prev,next} = useContext(PlayerContext);
     
     
     return (
@@ -21,11 +21,11 @@ const Player = () => {
             <div className='flex flex-col items-center gap-1 m-auto'>
                 <div className='flex gap-4'>
                     <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="Shuffle" />
-                    <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="Prev" />
+                    <img onClick={prev} className='w-4 cursor-pointer' src={assets.prev_icon} alt="Prev" />
                     {/* render btn base on playStatus, false = play, true = pause */}
                     {playStatus ? <img onClick={pause} className='w-4 cursor-pointer' src={assets.pause_icon} alt="Pause"  />
                     : <img onClick={play} className='w-4 cursor-pointer' src={assets.play_icon} alt="Play" />}
-                    <img className='w-4 cursor-pointer' src={assets.next_icon} alt="Next" />
+                    <img onClick={next} className='w-4 cursor-pointer' src={assets.next_icon} alt="Next" />
                     <img className='w-4 cursor-pointer' src={assets.loop_icon} alt="Loop" />
                 </div>
                 {/* Timer */}

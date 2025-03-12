@@ -61,6 +61,22 @@ const PlayerContextProvider = (props) => {
         }, 1000)
     },[audioRef])
 
+    // Previous btn
+    const prev = async () => {
+        if (track.id > 0) { 
+            await setTrack(songsData[track.id - 1]);
+            await audioRef.current.play();
+            setPlayStatus(true)
+        } 
+    }
+    // Next btn
+    const next = async () => {
+        if (track.id < songsData.length - 1 ) {
+            await setTrack(songsData[track.id +1]);
+            await audioRef.current.play();
+            setPlayStatus(true)
+        }
+    }
     const contextValue = {
         audioRef,
         seekBg,
@@ -70,6 +86,7 @@ const PlayerContextProvider = (props) => {
         time,setTime,
         play,pause,
         playWithId,
+        prev,next,
     }
 
     return (
