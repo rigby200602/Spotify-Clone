@@ -3,12 +3,12 @@ import cors from 'cors'
 import 'dotenv/config'
 import songRouter from './src/routes/songRoute.js';
 import connectDB from './src/config/mongoDB.js';
+import connectCloudinary from './src/config/cloudinary.js';
 
 // app config
 const app = express();
 const port =  process.env.PORT || 4000;
 connectDB();
-
 // middlewares
 app.use(express.json());
 app.use(cors());
