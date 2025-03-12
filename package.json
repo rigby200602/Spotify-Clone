@@ -1,8 +1,20 @@
 {
   "name": "spotify-clone",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "homepage": "https://github.com/rigby200602/Spotify-Clone#readme",
+  "bugs": {
+    "url": "https://github.com/rigby200602/Spotify-Clone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rigby200602/Spotify-Clone.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "server.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +23,13 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
+    "cloudinary": "^2.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
