@@ -1,4 +1,4 @@
-import { addSong, listSong } from "../controller/songController";
+import { addSong, listSong } from "../controller/songController.js";
 import express from 'express'
 
 const songRouter = express.Router();
